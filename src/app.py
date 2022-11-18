@@ -26,8 +26,7 @@ def add_new_todo():
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-    delete_todo = request.data
-    todos.remove("task")
+    todos.pop(position)
     print("This is the position to delete: ",position)
     return jsonify(todos)
 
